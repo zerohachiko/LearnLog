@@ -1,21 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.zcz.learnlog" >
+<manifest package="com.zcz.learnlog"
+          xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <application
-        android:allowBackup="true"
-        android:icon="@mipmap/ic_launcher"
-        android:label="@string/app_name"
-        android:theme="@style/AppTheme" >
-        <activity
-            android:name=".MainActivity"
-            android:label="@string/app_name" >
+	<uses-permission android:name="android.permission.INTERNET"/>
+
+	<permission android:name="zcz.com.learnlog.permission.SAY_HELLO"/>
+	<permission android:name="zcz.com.learnlog.permission.MyAty"></permission>
+
+	<uses-permission android:name="zcz.com.learnlog.permission.SAY_HELLO"/>
+
+	<application
+		android:allowBackup="true"
+		android:icon="@mipmap/ic_launcher"
+		android:label="@string/app_name"
+		android:theme="@style/AppTheme">
+		<activity
+			android:name=".MainActivity"
+			android:label="@string/app_name">
+			<intent-filter>
+				<action android:name="android.intent.action.MAIN"/>
+
+				<category android:name="android.intent.category.LAUNCHER"/>
+			</intent-filter>
+		</activity>
+		<activity
+			android:name=".Aty_Mine"
+			android:label="@string/title_activity_aty__mine"
+			>
             <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
+	            <category android:name="android.intent.category.DEFAULT"/>
+	            <action android:name="zcz.com.learnlog.intent.action.Aty_Mine"/>
             </intent-filter>
-        </activity>
-    </application>
+		</activity>
+	</application>
 
 </manifest>
